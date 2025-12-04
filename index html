@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3-Ingredient SG Price Demo • Vegan Baked Sushi Cups • thehealthybuck.com</title>
+  <meta name="description" content="Real example of 3 ingredient price comparisons for Vegan Baked Sushi Cups in Singapore across FairPrice, Cold Storage, Giant, Sheng Siong, RedMart & Amazon SG.">
+  <style>
+    :root{
+      --bg: #dff3f5;
+      --card: #ffffff;
+      --text: #0b2a2f;
+      --muted: #5d7d83;
+      --brand: #2aa6b4;
+      --accent: #7ee2b8;
+      --ring: rgba(45, 182, 196, .25);
+      --shadow: 0 18px 40px rgba(7, 30, 36, .12), 0 4px 10px rgba(7, 30, 36, .06);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      color:var(--text);
+      background: radial-gradient(circle at top left,#f4fcff 0,#dff3f5 32%,#c4e4eb 72%,#9fc7d1 100%);
+      line-height:1.6;
+      padding: 16px;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .page{
+      max-width: 980px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .site-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      margin-bottom:18px;
+      flex-wrap:wrap;
+    }
+    .site-title{
+      font-weight:800;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+      font-size:14px;
+      color:var(--muted);
+    }
+    h1{
+      margin:0 0 4px;
+      font-size:22px;
+    }
+    .subtitle{
+      margin:0;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .last-updated{
+      margin:4px 0 0;
+      font-size:12px;
+      color:var(--muted);
+    }
+    .pill{
+      display:inline-flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:4px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.7);
+      box-shadow:0 1px 2px rgba(0,0,0,.05);
+      font-size:11px;
+      color:var(--muted);
+      text-align:right;
+    }
+    .pill strong{
+      font-size:12px;
+    }
+    .pill .brand-mark{
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:#0f766e;
+      font-weight:700;
+    }
+    .panel{
+      background:rgba(255,255,255,.9);
+      border-radius:18px;
+      padding:14px 14px 16px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+    }
+    .panel-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      margin-bottom:10px;
+      flex-wrap:wrap;
+    }
+    .panel-title{
+      font-size:16px;
+      font-weight:700;
+    }
+    .panel-note{
+      font-size:12px;
+      color:var(--muted);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+      gap:12px;
+      margin-top:10px;
+    }
+    @media (max-width: 640px){
+      body{padding:12px;}
+      h1{font-size:20px;}
+      .panel-title{font-size:15px;}
+      .card{padding:12px;}
+      .card h3{font-size:15px;}
+      .muted{font-size:13px;}
+    }
+    .card{
+      background:rgba(255,255,255,.95);
+      border-radius:14px;
+      padding:10px;
+      box-shadow:0 8px 20px rgba(15,23,42,.12);
+      cursor:pointer;
+      transition:transform .08s ease, box-shadow .08s ease, border-color .1s ease;
+      border:1px solid rgba(148,163,184,.35);
+    }
+    .card:hover{
+      transform:translateY(-2px);
+      box-shadow:0 14px 30px rgba(15,23,42,.18);
+      border-color:rgba(45,182,196,.8);
+    }
+    .card h3{
+      margin:0 0 4px;
+      font-size:14px;
+    }
+    .muted{
+      color:var(--muted);
+      font-size:12px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      margin-top:6px;
+      padding:2px 7px;
+      border-radius:999px;
+      background:#ecfdf5;
+      color:#047857;
+      font-size:11px;
+      font-weight:600;
+    }
+    .quality-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      margin-top:4px;
+      padding:2px 7px;
+      border-radius:999px;
+      background:#eef2ff;
+      color:#4f46e5;
+      font-size:10px;
+      font-weight:600;
+    }
+    .recipe-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:3px 8px;
+      border-radius:999px;
+      background:rgba(126,226,184,.14);
+      color:#065f46;
+      font-size:11px;
+      margin-top:6px;
+    }
+    .details{
+      margin-top:14px;
+      background:rgba(255,255,255,.98);
+      border-radius:14px;
+      padding:12px 12px 14px;
+      border:1px solid rgba(148,163,184,.4);
+      box-shadow:0 10px 26px rgba(15,23,42,.16);
+      position:sticky;
+      bottom:0;
+    }
+    @media (max-width: 840px){
+      .details{
+        position:static;
+      }
+    }
+    .details-header{
+      display:flex;
+      justify-content:space-between;
+      gap:8px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+    .details-title{
+      font-size:15px;
+      font-weight:700;
+      margin-bottom:2px;
+    }
+    .details-unit{
+      font-size:12px;
+      color:var(--muted);
+    }
+    .badge-store{
+      font-size:11px;
+      padding:3px 9px;
+      border-radius:999px;
+      background:#0f766e;
+      color:white;
+      font-weight:600;
+      box-shadow:0 0 0 1px rgba(15,118,110,.2);
+      white-space:nowrap;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:8px;
+      font-size:12px;
+    }
+    th,td{
+      padding:5px 4px;
+      text-align:left;
+      border-bottom:1px solid #e5e7eb;
+    }
+    th{
+      font-size:11px;
+      color:#6b7280;
+      text-transform:uppercase;
+      letter-spacing:.03em;
+    }
+    tr.best{
+      background:#d1fae5;
+    }
+    tr.top3{
+      background:#ecfdf5;
+      font-weight:600;
+    }
+    .btn-row{
+      margin-top:8px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .btn{
+      border:none;
+      border-radius:999px;
+      font-size:11px;
+      padding:5px 10px;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      background:#0f766e;
+      color:white;
+    }
+    .btn.secondary{
+      background:#e5e7eb;
+      color:#374151;
+    }
+    .btn span.store{
+      font-weight:600;
+    }
+    .note-bar{
+      margin-top:8px;
+      padding:6px 8px;
+      border-radius:10px;
+      background:#f5f3ff;
+      font-size:11px;
+      color:#4c1d95;
+    }
+    .watermark{
+      position:fixed;
+      right:14px;
+      bottom:10px;
+      font-size:10px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:rgba(11,42,47,0.22);
+      pointer-events:none;
+      user-select:none;
+      z-index:0;
+      font-weight:700;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div>
+        <div class="site-title">Singapore Grocery Example</div>
+        <h1>3-Ingredient Price Checker · Vegan Baked Sushi Cups</h1>
+        <p class="subtitle">
+          Real example of three ingredients for Vegan Baked Sushi Cups, compared across
+          FairPrice, Cold Storage, Giant, Sheng Siong, RedMart &amp; Amazon SG.
+        </p>
+        <div class="last-updated">
+          <!-- UPDATE THIS MANUALLY EACH WEEK -->
+          Last updated: December 4, 2025
+        </div>
+      </div>
+      <div class="pill">
+        <div><strong>Stores</strong>: FairPrice · Cold Storage · Giant · Sheng Siong · RedMart · Amazon SG</div>
+        <div class="brand-mark">thehealthybuck.com</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel" aria-label="3-ingredient grid">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">This week’s real 3-ingredient example</div>
+            <div class="panel-note">
+              Tap a card to see all store prices, automatic Top 3 cheapest stores,
+              and quick links to the exact products online. This is a live example of
+              what members see weekly (just with a bigger list).
+            </div>
+          </div>
+        </div>
+
+        <div id="product-grid" class="grid"></div>
+
+        <div id="details" class="details" style="display:none;">
+          <div class="details-header">
+            <div>
+              <div id="details-title" class="details-title"></div>
+              <div id="details-unit" class="details-unit"></div>
+              <div id="details-recipe" class="recipe-tag">
+                🍣 Used in: Vegan Baked Sushi Cups (Tofu)
+              </div>
+            </div>
+            <div id="details-best" class="badge-store"></div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Store</th>
+                <th>Price (S$)</th>
+                <th>Extra vs best</th>
+              </tr>
+            </thead>
+            <tbody id="details-rows"></tbody>
+          </table>
+          <div class="btn-row" id="buy-buttons"></div>
+          <div class="note-bar" id="note-bar"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="watermark">thehealthybuck.com</div>
+
+  <script>
+    // Store labels for Singapore
+    const STORE_LABELS = {
+      fairprice: "FairPrice",
+      coldstorage: "Cold Storage",
+      giant: "Giant",
+      shengsiong: "Sheng Siong",
+      redmart: "RedMart",
+      amazonsg: "Amazon SG"
+    };
+
+    // === REAL DATA: EDIT THIS EACH WEEK ===
+    // For each ingredient: update price (number) and link (string).
+    // All prices in SGD.
+
+    const PRODUCTS = [
+      {
+        id: "sg-firm-tofu",
+        name: "Firm Tofu Block (300–450 g)",
+        unit: "per block",
+        category: "Protein · Tofu",
+        quality: { organic: false, nongmo: false }, // flip as needed
+        stores: {
+          fairprice:   { price: 1.60, link: "https://www.fairprice.com.sg/search?query=firm%20tofu%20block" },
+          coldstorage: { price: 1.95, link: "https://coldstorage.com.sg/search?q=firm+tofu" },
+          giant:       { price: 1.80, link: "https://giant.sg/search?q=firm+tofu" },
+          shengsiong:  { price: 1.55, link: "https://shengsiong.com.sg/search?q=firm+tofu" },
+          redmart:     { price: 1.90, link: "https://www.lazada.sg/tag/tofu/?pagesize=40" },
+          amazonsg:    { price: 2.10, link: "https://www.amazon.sg/s?k=firm+tofu" }
+        }
+      },
+      {
+        id: "sg-sushi-rice",
+        name: "Japanese-Style Sushi Rice (1–2 kg)",
+        unit: "per kg (approx)",
+        category: "Grains · Rice",
+        quality: { organic: false, nongmo: false },
+        stores: {
+          fairprice:   { price: 6.90, link: "https://www.fairprice.com.sg/search?query=sushi%20rice" },
+          coldstorage: { price: 7.80, link: "https://coldstorage.com.sg/search?q=sushi+rice" },
+          giant:       { price: 7.20, link: "https://giant.sg/search?q=sushi+rice" },
+          shengsiong:  { price: 6.70, link: "https://shengsiong.com.sg/search?q=sushi+rice" },
+          redmart:     { price: 7.50, link: "https://www.lazada.sg/tag/sushi-rice/?pagesize=40" },
+          amazonsg:    { price: 7.90, link: "https://www.amazon.sg/s?k=sushi+rice" }
+        }
+      },
+      {
+        id: "sg-nori-sheets",
+        name: "Nori Seaweed Sheets (10–50 sheets)",
+        unit: "per pack",
+        category: "Pantry · Seaweed",
+        quality: { organic: false, nongmo: false },
+        stores: {
+          fairprice:   { price: 4.20, link: "https://www.fairprice.com.sg/search?query=nori%20seaweed%20sheets" },
+          coldstorage: { price: 4.60, link: "https://coldstorage.com.sg/search?q=nori+seaweed" },
+          giant:       { price: 4.30, link: "https://giant.sg/search?q=nori+seaweed" },
+          shengsiong:  { price: 3.90, link: "https://shengsiong.com.sg/search?q=nori+seaweed" },
+          redmart:     { price: 3.70, link: "https://www.lazada.sg/tag/nori-sheets/?pagesize=40" },
+          amazonsg:    { price: 4.10, link: "https://www.amazon.sg/s?k=nori+seaweed+sheets" }
+        }
+      }
+    ];
+    // === END REAL DATA ===
+
+    function getBestStore(stores){
+      const entries = Object.entries(stores).filter(([_, data]) => data && typeof data.price === "number");
+      if(!entries.length) return null;
+      let best = entries[0];
+      for(const entry of entries){
+        if(entry[1].price < best[1].price) best = entry;
+      }
+      return { key: best[0], price: best[1].price, link: best[1].link };
+    }
+
+    function buildComparison(stores, bestPrice){
+      return Object.entries(stores)
+        .filter(([_, data]) => data && typeof data.price === "number")
+        .map(([key, data]) => ({
+          key,
+          price: data.price,
+          diff: +(data.price - bestPrice).toFixed(2)
+        }))
+        .sort((a,b)=>a.price - b.price)
+        .map((item, index) => ({
+          ...item,
+          rank: index + 1
+        }));
+    }
+
+    // For this demo, just use all products (only 3).
+    function getAllProducts(){
+      return PRODUCTS.map(p => {
+        const entries = Object.values(p.stores).filter(s => s && typeof s.price === "number");
+        let savings = null;
+        if(entries.length >= 2){
+          const prices = entries.map(s => s.price);
+          const minPrice = Math.min(...prices);
+          const maxPrice = Math.max(...prices);
+          savings = +(maxPrice - minPrice).toFixed(2);
+        }
+        return { ...p, savings };
+      });
+    }
+
+    function renderGrid(){
+      const grid = document.getElementById('product-grid');
+      grid.innerHTML = "";
+      const list = getAllProducts();
+
+      list.forEach(p => {
+        const best = getBestStore(p.stores);
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.dataset.id = p.id;
+
+        const savingsText = typeof p.savings === "number"
+          ? `<div class="muted">Up to S$${p.savings.toFixed(2)} difference across stores</div>`
+          : "";
+
+        let qualityLabel = "";
+        if (p.quality && (p.quality.organic || p.quality.nongmo)) {
+          if (p.quality.organic && p.quality.nongmo) {
+            qualityLabel = "Organic · Non-GMO";
+          } else if (p.quality.organic) {
+            qualityLabel = "Organic";
+          } else if (p.quality.nongmo) {
+            qualityLabel = "Non-GMO";
+          }
+        }
+        const qualityChip = qualityLabel
+          ? `<div class="quality-chip">${qualityLabel}</div>`
+          : "";
+
+        card.innerHTML = `
+          <h3>${p.name}</h3>
+          <div class="muted">${p.category} · ${p.unit}</div>
+          ${best ? `<div class="chip">From S$${best.price.toFixed(2)} at ${STORE_LABELS[best.key]}</div>` : ""}
+          ${savingsText}
+          ${qualityChip}
+          <div class="recipe-tag">🍣 Used in Vegan Baked Sushi Cups</div>
+        `;
+        card.addEventListener('click', ()=> showDetails(p.id));
+        grid.appendChild(card);
+      });
+
+      // Auto-select first product on load so they immediately see the table
+      if(list.length){
+        showDetails(list[0].id);
+      }
+    }
+
+    function showDetails(id){
+      const product = PRODUCTS.find(p => p.id === id);
+      if(!product) return;
+      const best = getBestStore(product.stores);
+      const details = document.getElementById('details');
+      const title = document.getElementById('details-title');
+      const unit = document.getElementById('details-unit');
+      const badge = document.getElementById('details-best');
+      const rowsTbody = document.getElementById('details-rows');
+      const btnRow = document.getElementById('buy-buttons');
+      const noteBar = document.getElementById('note-bar');
+
+      if(!best){
+        title.textContent = product.name;
+        unit.textContent = product.category + " · " + product.unit;
+        badge.textContent = "No price data";
+        rowsTbody.innerHTML = "";
+        btnRow.innerHTML = "";
+        noteBar.textContent = "Add online prices and links for this ingredient to activate comparisons.";
+        details.style.display = 'block';
+        details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+
+      title.textContent = product.name;
+      unit.textContent = product.category + " · " + product.unit;
+      badge.textContent = `Best price: S$${best.price.toFixed(2)} at ${STORE_LABELS[best.key]}`;
+
+      const rows = buildComparison(product.stores, best.price);
+      rowsTbody.innerHTML = "";
+      rows.forEach(r => {
+        const tr = document.createElement('tr');
+        if(r.diff === 0) tr.classList.add('best');
+        if(r.rank <= 3) tr.classList.add('top3');
+        const diffText = r.diff === 0 ? "—" : "+S$" + r.diff.toFixed(2);
+        tr.innerHTML = `
+          <td>${STORE_LABELS[r.key]}</td>
+          <td>S$${r.price.toFixed(2)}</td>
+          <td>${diffText}</td>
+        `;
+        rowsTbody.appendChild(tr);
+      });
+
+      btnRow.innerHTML = "";
+      rows.forEach(r => {
+        const storeData = product.stores[r.key];
+        if(!storeData || !storeData.link || storeData.link === "#") return;
+        const a = document.createElement('a');
+        a.href = storeData.link;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        const btn = document.createElement('button');
+        btn.className = 'btn' + (r.diff === 0 ? '' : ' secondary');
+        btn.innerHTML = `<span>Buy at</span><span class="store">${STORE_LABELS[r.key]}</span>`;
+        a.appendChild(btn);
+        btnRow.appendChild(a);
+      });
+
+      const prices = rows.map(r => r.price);
+      const minPrice = Math.min(...prices);
+      const maxPrice = Math.max(...prices);
+      const maxSave = +(maxPrice - minPrice).toFixed(2);
+      const worst = rows[rows.length - 1];
+
+      if(maxSave > 0){
+        noteBar.textContent = `If you usually buy this at ${STORE_LABELS[worst.key]}, you’d save about S$${maxSave.toFixed(2)} ${product.unit} by switching to ${STORE_LABELS[best.key]} for this ingredient.`;
+      } else {
+        noteBar.textContent = `All listed stores are currently very close in price for this ingredient.`;
+      }
+
+      details.style.display = 'block';
+      details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    renderGrid();
+  </script>
+</body>
+</html>
